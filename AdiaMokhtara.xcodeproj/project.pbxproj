@@ -28,6 +28,8 @@
 		CEDF0942172045D400EFF0C5 /* DuaaDB.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF0941172045D400EFF0C5 /* DuaaDB.m */; };
 		CEDF09461720482100EFF0C5 /* AMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF09451720482100EFF0C5 /* AMDB.m */; };
 		CEDF09491721718400EFF0C5 /* Duaa.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF09481721718400EFF0C5 /* Duaa.m */; };
+		CEDF094B1721956500EFF0C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF094A1721956500EFF0C5 /* AVFoundation.framework */; };
+		CEDF094E1721983700EFF0C5 /* sabah-frhmnd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEDF094D1721983700EFF0C5 /* sabah-frhmnd.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		CEDF09451720482100EFF0C5 /* AMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMDB.m; sourceTree = "<group>"; };
 		CEDF09471721718400EFF0C5 /* Duaa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Duaa.h; sourceTree = "<group>"; };
 		CEDF09481721718400EFF0C5 /* Duaa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Duaa.m; sourceTree = "<group>"; };
+		CEDF094A1721956500EFF0C5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CEDF094D1721983700EFF0C5 /* sabah-frhmnd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sabah-frhmnd.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDF094B1721956500EFF0C5 /* AVFoundation.framework in Frameworks */,
 				CEDF093817203E2000EFF0C5 /* libsqlite3.dylib in Frameworks */,
 				CEDF0909171F36EA00EFF0C5 /* UIKit.framework in Frameworks */,
 				CEDF090B171F36EA00EFF0C5 /* Foundation.framework in Frameworks */,
@@ -82,6 +87,7 @@
 		CEDF08FC171F36EA00EFF0C5 = {
 			isa = PBXGroup;
 			children = (
+				CEDF094A1721956500EFF0C5 /* AVFoundation.framework */,
 				CEDF093917203E8C00EFF0C5 /* duaa.db */,
 				CEDF093717203E2000EFF0C5 /* libsqlite3.dylib */,
 				CEDF090E171F36EA00EFF0C5 /* AdiaMokhtara */,
@@ -111,6 +117,7 @@
 		CEDF090E171F36EA00EFF0C5 /* AdiaMokhtara */ = {
 			isa = PBXGroup;
 			children = (
+				CEDF094C1721958200EFF0C5 /* mp3s */,
 				CEDF09431720480500EFF0C5 /* AdiaMokhtaraDB */,
 				CEDF093F172045B400EFF0C5 /* DuaaDB */,
 				CEDF093B1720404300EFF0C5 /* utils */,
@@ -170,6 +177,14 @@
 				CEDF09481721718400EFF0C5 /* Duaa.m */,
 			);
 			name = AdiaMokhtaraDB;
+			sourceTree = "<group>";
+		};
+		CEDF094C1721958200EFF0C5 /* mp3s */ = {
+			isa = PBXGroup;
+			children = (
+				CEDF094D1721983700EFF0C5 /* sabah-frhmnd.mp3 */,
+			);
+			name = mp3s;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +247,7 @@
 				CEDF092E171F36EB00EFF0C5 /* DetailViewController_iPhone.xib in Resources */,
 				CEDF0931171F36EB00EFF0C5 /* DetailViewController_iPad.xib in Resources */,
 				CEDF093A17203E8C00EFF0C5 /* duaa.db in Resources */,
+				CEDF094E1721983700EFF0C5 /* sabah-frhmnd.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

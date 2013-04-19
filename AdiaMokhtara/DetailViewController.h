@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Duaa.h"
+#import <AVFoundation/AVFoundation.h>
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 @property (strong,nonatomic) Duaa* currentDuaa;
+@property (strong,nonatomic) AVAudioPlayer *audioPlayer;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 -(void) refreshView;
+- (IBAction)btn_playIphone:(id)sender;
 @end

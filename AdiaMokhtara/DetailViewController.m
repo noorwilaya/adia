@@ -15,7 +15,7 @@
 
 @implementation DetailViewController
 
-@synthesize currentDuaa;
+@synthesize currentDuaa,audioPlayer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,9 +34,26 @@
     
 }
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+//audio methods
+
+-(void) playFile
+{
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:currentDuaa.duaaFile ofType:@"mp3"]];
+    
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive: YES error: nil];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
+    [audioPlayer play];
 }
 
 
@@ -69,4 +86,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+//btn actions
+//iphone actions
+- (IBAction)btn_playIphone:(id)sender {[self playFile];
+}
+
+//ipad actions
 @end
