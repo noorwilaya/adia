@@ -22,6 +22,12 @@
 		CEDF092B171F36EB00EFF0C5 /* MasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDF0929171F36EB00EFF0C5 /* MasterViewController_iPad.xib */; };
 		CEDF092E171F36EB00EFF0C5 /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDF092C171F36EB00EFF0C5 /* DetailViewController_iPhone.xib */; };
 		CEDF0931171F36EB00EFF0C5 /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDF092F171F36EB00EFF0C5 /* DetailViewController_iPad.xib */; };
+		CEDF093817203E2000EFF0C5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF093717203E2000EFF0C5 /* libsqlite3.dylib */; };
+		CEDF093A17203E8C00EFF0C5 /* duaa.db in Resources */ = {isa = PBXBuildFile; fileRef = CEDF093917203E8C00EFF0C5 /* duaa.db */; };
+		CEDF093E1720443E00EFF0C5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF093D1720443E00EFF0C5 /* Utils.m */; };
+		CEDF0942172045D400EFF0C5 /* DuaaDB.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF0941172045D400EFF0C5 /* DuaaDB.m */; };
+		CEDF09461720482100EFF0C5 /* AMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF09451720482100EFF0C5 /* AMDB.m */; };
+		CEDF09491721718400EFF0C5 /* Duaa.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDF09481721718400EFF0C5 /* Duaa.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +52,16 @@
 		CEDF092A171F36EB00EFF0C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPad.xib; sourceTree = "<group>"; };
 		CEDF092D171F36EB00EFF0C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPhone.xib; sourceTree = "<group>"; };
 		CEDF0930171F36EB00EFF0C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPad.xib; sourceTree = "<group>"; };
+		CEDF093717203E2000EFF0C5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		CEDF093917203E8C00EFF0C5 /* duaa.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = duaa.db; sourceTree = "<group>"; };
+		CEDF093C1720443E00EFF0C5 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		CEDF093D1720443E00EFF0C5 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		CEDF0940172045D400EFF0C5 /* DuaaDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DuaaDB.h; sourceTree = "<group>"; };
+		CEDF0941172045D400EFF0C5 /* DuaaDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuaaDB.m; sourceTree = "<group>"; };
+		CEDF09441720482100EFF0C5 /* AMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMDB.h; sourceTree = "<group>"; };
+		CEDF09451720482100EFF0C5 /* AMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMDB.m; sourceTree = "<group>"; };
+		CEDF09471721718400EFF0C5 /* Duaa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Duaa.h; sourceTree = "<group>"; };
+		CEDF09481721718400EFF0C5 /* Duaa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Duaa.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDF093817203E2000EFF0C5 /* libsqlite3.dylib in Frameworks */,
 				CEDF0909171F36EA00EFF0C5 /* UIKit.framework in Frameworks */,
 				CEDF090B171F36EA00EFF0C5 /* Foundation.framework in Frameworks */,
 				CEDF090D171F36EA00EFF0C5 /* CoreGraphics.framework in Frameworks */,
@@ -65,6 +82,8 @@
 		CEDF08FC171F36EA00EFF0C5 = {
 			isa = PBXGroup;
 			children = (
+				CEDF093917203E8C00EFF0C5 /* duaa.db */,
+				CEDF093717203E2000EFF0C5 /* libsqlite3.dylib */,
 				CEDF090E171F36EA00EFF0C5 /* AdiaMokhtara */,
 				CEDF0907171F36EA00EFF0C5 /* Frameworks */,
 				CEDF0906171F36EA00EFF0C5 /* Products */,
@@ -92,6 +111,9 @@
 		CEDF090E171F36EA00EFF0C5 /* AdiaMokhtara */ = {
 			isa = PBXGroup;
 			children = (
+				CEDF09431720480500EFF0C5 /* AdiaMokhtaraDB */,
+				CEDF093F172045B400EFF0C5 /* DuaaDB */,
+				CEDF093B1720404300EFF0C5 /* utils */,
 				CEDF0917171F36EB00EFF0C5 /* AppDelegate.h */,
 				CEDF0918171F36EB00EFF0C5 /* AppDelegate.m */,
 				CEDF0920171F36EB00EFF0C5 /* MasterViewController.h */,
@@ -119,6 +141,35 @@
 				CEDF091E171F36EB00EFF0C5 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CEDF093B1720404300EFF0C5 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				CEDF093C1720443E00EFF0C5 /* Utils.h */,
+				CEDF093D1720443E00EFF0C5 /* Utils.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		CEDF093F172045B400EFF0C5 /* DuaaDB */ = {
+			isa = PBXGroup;
+			children = (
+				CEDF0940172045D400EFF0C5 /* DuaaDB.h */,
+				CEDF0941172045D400EFF0C5 /* DuaaDB.m */,
+			);
+			name = DuaaDB;
+			sourceTree = "<group>";
+		};
+		CEDF09431720480500EFF0C5 /* AdiaMokhtaraDB */ = {
+			isa = PBXGroup;
+			children = (
+				CEDF09441720482100EFF0C5 /* AMDB.h */,
+				CEDF09451720482100EFF0C5 /* AMDB.m */,
+				CEDF09471721718400EFF0C5 /* Duaa.h */,
+				CEDF09481721718400EFF0C5 /* Duaa.m */,
+			);
+			name = AdiaMokhtaraDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +231,7 @@
 				CEDF092B171F36EB00EFF0C5 /* MasterViewController_iPad.xib in Resources */,
 				CEDF092E171F36EB00EFF0C5 /* DetailViewController_iPhone.xib in Resources */,
 				CEDF0931171F36EB00EFF0C5 /* DetailViewController_iPad.xib in Resources */,
+				CEDF093A17203E8C00EFF0C5 /* duaa.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +246,10 @@
 				CEDF0919171F36EB00EFF0C5 /* AppDelegate.m in Sources */,
 				CEDF0922171F36EB00EFF0C5 /* MasterViewController.m in Sources */,
 				CEDF0925171F36EB00EFF0C5 /* DetailViewController.m in Sources */,
+				CEDF093E1720443E00EFF0C5 /* Utils.m in Sources */,
+				CEDF0942172045D400EFF0C5 /* DuaaDB.m in Sources */,
+				CEDF09461720482100EFF0C5 /* AMDB.m in Sources */,
+				CEDF09491721718400EFF0C5 /* Duaa.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

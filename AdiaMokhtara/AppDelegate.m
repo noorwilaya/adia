@@ -16,13 +16,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(@"App delegate started");
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    
+    NSLog(@"Initilizing xib based on the device");
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        NSLog(@"The device is iphone");
+        NSLog(@"Initializing master view contoller");
         MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController_iPhone" bundle:nil];
+        NSLog(@"Initilizing navigation contoller");
         self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+        NSLog(@"Adding the controller to the window object");
         self.window.rootViewController = self.navigationController;
-    } else {
+    }
+    else
+    {
         MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController_iPad" bundle:nil];
         UINavigationController *masterNavigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
         
