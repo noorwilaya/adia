@@ -10,6 +10,7 @@
 
 #import "DetailViewController.h"
 #import "AMDB.h"
+#import "Duaa.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -18,12 +19,17 @@
 
 @implementation MasterViewController
 
+NSMutableArray* duaaList;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.title = NSLocalizedString(@"Master", @"Master");
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    if (self)
+    {
+        NSLog(@"Setting the title of the master view controller");
+        self.title = @"أدعية مختارة";
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+        {
             self.clearsSelectionOnViewWillAppear = NO;
             self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
         }
@@ -34,35 +40,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    
-}
-
--(void) testDatabase {
+	NSLog(@"View loaded");
+    NSLog(@"initialixing db");
     AMDB *db;
     NSString * dbfn = @"duaa.db";
-    
     db = [[AMDB alloc] initWithAMDBFilename:dbfn];
+    NSLog(@"Getting the list of duaas ");
+    duaaList= [db getDuaaList];
     
-    [db getDuaaList];
-    /*for (NSNumber *n in [db getDuaaIDs]) {
-        NSLog(@"Number %i",[n intValue]);
-    }*/
 }
-
 
 
 //Table Delegates
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = _objects[indexPath.row];
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-	    if (!self.detailViewController) {
+    NSLog(@"user selected an item");
+    Duaa *object = duaaList[indexPath.row];
+    
+    NSLog(@"Checking the user device");
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        NSLog(@"The user device is iphone");
+	    if (!self.detailViewController)
+        {
+            NSLog(@"Initializing the detail view contoller for the first time");
 	        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
 	    }
-	    self.detailViewController.detailItem = object;
+        NSLog(@"Passing the selected duaa to the detail controller");
+	    self.detailViewController.currentDuaa = object;
+        
+        NSLog(@"Pushing the detail contoller to the nnavigation controller");
         [self.navigationController pushViewController:self.detailViewController animated:YES];
+        NSLog(@"refreshing the detail view");
+        [self.detailViewController refreshView];
+        
+        
     } else {
         self.detailViewController.detailItem = object;
     }
@@ -76,15 +89,16 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
     }
     
-    
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    //Customizing the cell text and subtext
+    Duaa *object = duaaList[indexPath.row];
+    cell.detailTextLabel.text=[object duaaReciter];
+    cell.textLabel.text = [object duaaName];
     return cell;
 }
 
@@ -95,7 +109,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return duaaList.count;
 }
 
 

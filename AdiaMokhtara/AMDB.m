@@ -167,9 +167,12 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
     NSMutableArray *duaalist=[[NSMutableArray alloc] init];
     Duaa *duaa;
     NSDictionary * row;
+    NSNumber *duaaId;
     for (row in [self getQuery:@"SELECT * FROM duaa"])
     {
         duaa=[[Duaa alloc] init];
+        duaaId=row[@"id"];
+        duaa.duaaId=[duaaId intValue];
         duaa.duaaName=row[@"duaaname"];
         duaa.duaaReciter=row[@"reciter"];
         duaa.duaaText=row[@"text"];
