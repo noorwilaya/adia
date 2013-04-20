@@ -17,9 +17,12 @@
 }
 @end
 
-@implementation MasterViewController
+@implementation MasterViewController 
 
 NSMutableArray* duaaList;
+NSMutableArray* filteredDuaaList;
+AMDB *db;
+BOOL isFiltered;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,7 +45,7 @@ NSMutableArray* duaaList;
     [super viewDidLoad];
 	NSLog(@"View loaded");
     NSLog(@"initialixing db");
-    AMDB *db;
+    
     NSString * dbfn = @"duaa.db";
     db = [[AMDB alloc] initWithAMDBFilename:dbfn];
     NSLog(@"Getting the list of duaas ");
@@ -96,7 +99,16 @@ NSMutableArray* duaaList;
     }
     
     //Customizing the cell text and subtext
-    Duaa *object = duaaList[indexPath.row];
+    Duaa *object;
+    if(isFiltered)
+    {
+        object = filteredDuaaList[indexPath.row];
+    }
+    else
+    {
+        object= duaaList[indexPath.row];
+    }
+     
     cell.detailTextLabel.text=[object duaaReciter];
     cell.textLabel.text = [object duaaName];
     return cell;
@@ -109,9 +121,61 @@ NSMutableArray* duaaList;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return duaaList.count;
+    if(isFiltered)
+    {
+        return filteredDuaaList.count;
+    }
+    else
+    {
+       return duaaList.count; 
+    }
+    
 }
 
+//search methods
+//search input delegate
+
+-(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
+{
+    if(text.length>3)
+    {
+        [self doSearch:searchBar searchText:text];
+    }
+    if(text.length==0)
+    {
+        isFiltered = NO;
+        //[self.view endEditing:YES];
+        //[searchBar resignFirstResponder];
+    }
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    [self doSearch:searchBar searchText:searchBar.text];
+    // Do the search...
+}
+
+-(void) doSearch:(UISearchBar*)searchBar searchText:(NSString*)text
+{
+    
+    NSLog(@"the user is changing the search text");
+    NSLog(@" the search text is %@",text);
+    if(text.length == 3)
+    {
+        isFiltered = NO;
+        [self.view endEditing:YES];
+        [searchBar resignFirstResponder];
+    }
+    if(text.length>3)
+    {
+        isFiltered = YES;
+        filteredDuaaList = [[NSMutableArray alloc] init];
+        filteredDuaaList=[db searchDuaa:text];
+    }
+    
+    [self.tableView reloadData];
+}
 
 //extra methods
 - (void)didReceiveMemoryWarning
@@ -119,6 +183,10 @@ NSMutableArray* duaaList;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
 
 
 

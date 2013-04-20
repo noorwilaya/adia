@@ -191,4 +191,35 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
     
 }
 
+-(NSMutableArray *) searchDuaa:(NSString*) searchText
+{
+    NSLog(@"The user is searching in the duaa list");
+    NSMutableArray *duaalist=[[NSMutableArray alloc] init];
+    Duaa *duaa;
+    NSDictionary * row;
+    NSNumber *duaaId;
+    NSString* query=[[NSString alloc]initWithFormat:@"SELECT * FROM duaa where searchtext like '%%%@%%'",searchText];
+    NSLog(@"the query is %@",query);
+    for (row in [self getQuery:query])
+    {
+        duaa=[[Duaa alloc] init];
+        duaaId=row[@"id"];
+        duaa.duaaId=[duaaId intValue];
+        duaa.duaaName=row[@"duaaname"];
+        duaa.duaaReciter=row[@"reciter"];
+        duaa.duaaText=row[@"text"];
+        duaa.duaaSearchText=row[@"searchtext"];
+        duaa.duaaFile=row[@"file"];
+        NSLog(@"duaa name %@",duaa.duaaName);
+        [duaalist addObject:duaa];
+    }
+    
+    NSLog(@"finished getting duaa list");
+    NSLog(@"duaa list size is :%i",duaalist.count);
+    
+    
+    
+    return duaalist;
+}
+
 @end

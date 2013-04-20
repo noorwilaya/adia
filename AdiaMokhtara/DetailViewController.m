@@ -31,7 +31,8 @@
     {
         self.title = currentDuaa.duaaName;
     }
-    
+    self.duaaTextDisplay.text=currentDuaa.duaaText;
+
 }
 
 
@@ -45,6 +46,8 @@
 
 -(void) playFile
 {
+    NSLog(@"User touched the play button");
+    NSLog(@"Playing file %@",currentDuaa.duaaName);
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:currentDuaa.duaaFile ofType:@"mp3"]];
     
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
@@ -54,6 +57,16 @@
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     
     [audioPlayer play];
+}
+
+-(void) pauseFile
+{
+    [audioPlayer pause];
+}
+
+-(void) stopFile
+{
+    [audioPlayer stop];
 }
 
 
@@ -89,6 +102,12 @@
 //btn actions
 //iphone actions
 - (IBAction)btn_playIphone:(id)sender {[self playFile];
+}
+- (IBAction)btn_pauseIphone:(id)sender {[self pauseFile];
+}
+
+- (IBAction)btn_stopIphone:(id)sender {[self stopFile];
+
 }
 
 //ipad actions

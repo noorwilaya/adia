@@ -41,6 +41,7 @@ static NSUInteger const kDefaultMaxItemsPerFeed = 50;
 
 - (NSArray *) getDuaaIDs;
 -(NSMutableArray *) getDuaaList;
+-(NSMutableArray *) searchDuaa:(NSString*) searchText;
 
 
 

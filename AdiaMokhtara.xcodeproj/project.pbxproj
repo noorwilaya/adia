@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CECEBBB017229EF400961882 /* amn-mzeedi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBAF17229EF400961882 /* amn-mzeedi.mp3 */; };
+		CECEBBB41722A55A00961882 /* joshensageer-alisaleem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBB11722A55A00961882 /* joshensageer-alisaleem.mp3 */; };
+		CECEBBB51722A55A00961882 /* tawasel-hussainareean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBB21722A55A00961882 /* tawasel-hussainareean.mp3 */; };
+		CECEBBB61722A55A00961882 /* thmaly-maithmtammar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBB31722A55A00961882 /* thmaly-maithmtammar.mp3 */; };
 		CEDF0909171F36EA00EFF0C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF0908171F36EA00EFF0C5 /* UIKit.framework */; };
 		CEDF090B171F36EA00EFF0C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF090A171F36EA00EFF0C5 /* Foundation.framework */; };
 		CEDF090D171F36EA00EFF0C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF090C171F36EA00EFF0C5 /* CoreGraphics.framework */; };
@@ -33,6 +37,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CECEBBAF17229EF400961882 /* amn-mzeedi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "amn-mzeedi.mp3"; sourceTree = "<group>"; };
+		CECEBBB11722A55A00961882 /* joshensageer-alisaleem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "joshensageer-alisaleem.mp3"; sourceTree = "<group>"; };
+		CECEBBB21722A55A00961882 /* tawasel-hussainareean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "tawasel-hussainareean.mp3"; sourceTree = "<group>"; };
+		CECEBBB31722A55A00961882 /* thmaly-maithmtammar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "thmaly-maithmtammar.mp3"; sourceTree = "<group>"; };
 		CEDF0905171F36EA00EFF0C5 /* AdiaMokhtara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdiaMokhtara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDF0908171F36EA00EFF0C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEDF090A171F36EA00EFF0C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -182,6 +190,10 @@
 		CEDF094C1721958200EFF0C5 /* mp3s */ = {
 			isa = PBXGroup;
 			children = (
+				CECEBBB11722A55A00961882 /* joshensageer-alisaleem.mp3 */,
+				CECEBBB21722A55A00961882 /* tawasel-hussainareean.mp3 */,
+				CECEBBB31722A55A00961882 /* thmaly-maithmtammar.mp3 */,
+				CECEBBAF17229EF400961882 /* amn-mzeedi.mp3 */,
 				CEDF094D1721983700EFF0C5 /* sabah-frhmnd.mp3 */,
 			);
 			name = mp3s;
@@ -248,6 +260,10 @@
 				CEDF0931171F36EB00EFF0C5 /* DetailViewController_iPad.xib in Resources */,
 				CEDF093A17203E8C00EFF0C5 /* duaa.db in Resources */,
 				CEDF094E1721983700EFF0C5 /* sabah-frhmnd.mp3 in Resources */,
+				CECEBBB017229EF400961882 /* amn-mzeedi.mp3 in Resources */,
+				CECEBBB41722A55A00961882 /* joshensageer-alisaleem.mp3 in Resources */,
+				CECEBBB51722A55A00961882 /* tawasel-hussainareean.mp3 in Resources */,
+				CECEBBB61722A55A00961882 /* thmaly-maithmtammar.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +430,7 @@
 				CEDF0936171F36EB00EFF0C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
