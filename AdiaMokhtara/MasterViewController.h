@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class DetailViewController;
+@class AboutViewController;
 
-@interface MasterViewController : UITableViewController <UISearchBarDelegate>
+@interface MasterViewController : UITableViewController
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
-
+@property (strong,nonatomic) AboutViewController *aboutViewContoller;
 
 @end

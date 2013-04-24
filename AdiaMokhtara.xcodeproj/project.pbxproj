@@ -7,10 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CECEBBB017229EF400961882 /* amn-mzeedi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBAF17229EF400961882 /* amn-mzeedi.mp3 */; };
+		CEC69B0B1723CA72005AD154 /* amn-mzeedi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B0A1723CA72005AD154 /* amn-mzeedi.mp3 */; };
+		CEC69B0D1723CB0B005AD154 /* joshenkabeer-hussaingarib.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B0C1723CB0B005AD154 /* joshenkabeer-hussaingarib.mp3 */; };
+		CEC69B101723D012005AD154 /* adeela-mazeedi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B0E1723D012005AD154 /* adeela-mazeedi.mp3 */; };
+		CEC69B111723D012005AD154 /* somat-hussaingarib.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B0F1723D012005AD154 /* somat-hussaingarib.mp3 */; };
+		CEC69B131723D023005AD154 /* ahd-frhmnd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B121723D023005AD154 /* ahd-frhmnd.mp3 */; };
+		CEC69B151724040A005AD154 /* mashlool-mazeedi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B141724040A005AD154 /* mashlool-mazeedi.mp3 */; };
+		CEC69B2817240440005AD154 /* ahad-tamar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B161724043F005AD154 /* ahad-tamar.mp3 */; };
+		CEC69B2917240440005AD154 /* arba-tamar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B171724043F005AD154 /* arba-tamar.mp3 */; };
+		CEC69B2A17240440005AD154 /* hazeen-mazeedi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B1817240440005AD154 /* hazeen-mazeedi.mp3 */; };
+		CEC69B2B17240440005AD154 /* hojb-mazeedi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B1917240440005AD154 /* hojb-mazeedi.mp3 */; };
+		CEC69B2C17240440005AD154 /* ifttah-basem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B1A17240440005AD154 /* ifttah-basem.mp3 */; };
+		CEC69B2D17240440005AD154 /* ithnin-tamar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B1B17240440005AD154 /* ithnin-tamar.mp3 */; };
+		CEC69B2E17240440005AD154 /* joma-tamar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B1C17240440005AD154 /* joma-tamar.mp3 */; };
+		CEC69B2F17240440005AD154 /* kesa-mazeedi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B1D17240440005AD154 /* kesa-mazeedi.mp3 */; };
+		CEC69B3017240440005AD154 /* khamees-tamar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B1E17240440005AD154 /* khamees-tamar.mp3 */; };
+		CEC69B3117240440005AD154 /* komeel-hussaingarib.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B1F17240440005AD154 /* komeel-hussaingarib.mp3 */; };
+		CEC69B3217240440005AD154 /* mkarm-mazeedi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B2017240440005AD154 /* mkarm-mazeedi.mp3 */; };
+		CEC69B3317240440005AD154 /* mojeer-hussaingareeb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B2117240440005AD154 /* mojeer-hussaingareeb.mp3 */; };
+		CEC69B3417240440005AD154 /* ndba-hussainareean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B2217240440005AD154 /* ndba-hussainareean.mp3 */; };
+		CEC69B3517240440005AD154 /* sabt-tamar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B2317240440005AD154 /* sabt-tamar.mp3 */; };
+		CEC69B3617240440005AD154 /* thalatha-tamar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B2417240440005AD154 /* thalatha-tamar.mp3 */; };
+		CEC69B3717240440005AD154 /* yaadti-maithemkadhem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B2517240440005AD154 /* yaadti-maithemkadhem.mp3 */; };
+		CEC69B3817240440005AD154 /* yamfzi-hussaingarib.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B2617240440005AD154 /* yamfzi-hussaingarib.mp3 */; };
+		CEC69B3917240440005AD154 /* yastasheer-mazeedi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEC69B2717240440005AD154 /* yastasheer-mazeedi.mp3 */; };
 		CECEBBB41722A55A00961882 /* joshensageer-alisaleem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBB11722A55A00961882 /* joshensageer-alisaleem.mp3 */; };
 		CECEBBB51722A55A00961882 /* tawasel-hussainareean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBB21722A55A00961882 /* tawasel-hussainareean.mp3 */; };
 		CECEBBB61722A55A00961882 /* thmaly-maithmtammar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBB31722A55A00961882 /* thmaly-maithmtammar.mp3 */; };
+		CECEBBC41723C3F000961882 /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBB81723C3F000961882 /* greenButton.png */; };
+		CECEBBC51723C3F000961882 /* greenButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBB91723C3F000961882 /* greenButton@2x.png */; };
+		CECEBBC61723C3F000961882 /* greenButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBBA1723C3F000961882 /* greenButtonHighlight.png */; };
+		CECEBBC71723C3F000961882 /* greenButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBBB1723C3F000961882 /* greenButtonHighlight@2x.png */; };
+		CECEBBC81723C3F000961882 /* orangeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBBC1723C3F000961882 /* orangeButton.png */; };
+		CECEBBC91723C3F000961882 /* orangeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBBD1723C3F000961882 /* orangeButton@2x.png */; };
+		CECEBBCA1723C3F000961882 /* orangeButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBBE1723C3F000961882 /* orangeButtonHighlight.png */; };
+		CECEBBCB1723C3F000961882 /* orangeButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBBF1723C3F000961882 /* orangeButtonHighlight@2x.png */; };
+		CECEBBCC1723C3F000961882 /* tanButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBC01723C3F000961882 /* tanButton.png */; };
+		CECEBBCD1723C3F000961882 /* tanButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBC11723C3F000961882 /* tanButton@2x.png */; };
+		CECEBBCE1723C3F000961882 /* tanButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBC21723C3F000961882 /* tanButtonHighlight.png */; };
+		CECEBBCF1723C3F000961882 /* tanButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECEBBC31723C3F000961882 /* tanButtonHighlight@2x.png */; };
+		CEDCE9241726A59D00491ECB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDCE9221726A59C00491ECB /* AboutViewController.m */; };
+		CEDCE9251726A59D00491ECB /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDCE9231726A59C00491ECB /* AboutViewController.xib */; };
 		CEDF0909171F36EA00EFF0C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF0908171F36EA00EFF0C5 /* UIKit.framework */; };
 		CEDF090B171F36EA00EFF0C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF090A171F36EA00EFF0C5 /* Foundation.framework */; };
 		CEDF090D171F36EA00EFF0C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDF090C171F36EA00EFF0C5 /* CoreGraphics.framework */; };
@@ -37,10 +74,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CECEBBAF17229EF400961882 /* amn-mzeedi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "amn-mzeedi.mp3"; sourceTree = "<group>"; };
+		CEC69B0A1723CA72005AD154 /* amn-mzeedi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "amn-mzeedi.mp3"; sourceTree = "<group>"; };
+		CEC69B0C1723CB0B005AD154 /* joshenkabeer-hussaingarib.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "joshenkabeer-hussaingarib.mp3"; sourceTree = "<group>"; };
+		CEC69B0E1723D012005AD154 /* adeela-mazeedi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "adeela-mazeedi.mp3"; sourceTree = "<group>"; };
+		CEC69B0F1723D012005AD154 /* somat-hussaingarib.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "somat-hussaingarib.mp3"; sourceTree = "<group>"; };
+		CEC69B121723D023005AD154 /* ahd-frhmnd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ahd-frhmnd.mp3"; sourceTree = "<group>"; };
+		CEC69B141724040A005AD154 /* mashlool-mazeedi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "mashlool-mazeedi.mp3"; sourceTree = "<group>"; };
+		CEC69B161724043F005AD154 /* ahad-tamar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ahad-tamar.mp3"; sourceTree = "<group>"; };
+		CEC69B171724043F005AD154 /* arba-tamar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "arba-tamar.mp3"; sourceTree = "<group>"; };
+		CEC69B1817240440005AD154 /* hazeen-mazeedi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "hazeen-mazeedi.mp3"; sourceTree = "<group>"; };
+		CEC69B1917240440005AD154 /* hojb-mazeedi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "hojb-mazeedi.mp3"; sourceTree = "<group>"; };
+		CEC69B1A17240440005AD154 /* ifttah-basem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ifttah-basem.mp3"; sourceTree = "<group>"; };
+		CEC69B1B17240440005AD154 /* ithnin-tamar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ithnin-tamar.mp3"; sourceTree = "<group>"; };
+		CEC69B1C17240440005AD154 /* joma-tamar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "joma-tamar.mp3"; sourceTree = "<group>"; };
+		CEC69B1D17240440005AD154 /* kesa-mazeedi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "kesa-mazeedi.mp3"; sourceTree = "<group>"; };
+		CEC69B1E17240440005AD154 /* khamees-tamar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "khamees-tamar.mp3"; sourceTree = "<group>"; };
+		CEC69B1F17240440005AD154 /* komeel-hussaingarib.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "komeel-hussaingarib.mp3"; sourceTree = "<group>"; };
+		CEC69B2017240440005AD154 /* mkarm-mazeedi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "mkarm-mazeedi.mp3"; sourceTree = "<group>"; };
+		CEC69B2117240440005AD154 /* mojeer-hussaingareeb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "mojeer-hussaingareeb.mp3"; sourceTree = "<group>"; };
+		CEC69B2217240440005AD154 /* ndba-hussainareean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ndba-hussainareean.mp3"; sourceTree = "<group>"; };
+		CEC69B2317240440005AD154 /* sabt-tamar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sabt-tamar.mp3"; sourceTree = "<group>"; };
+		CEC69B2417240440005AD154 /* thalatha-tamar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "thalatha-tamar.mp3"; sourceTree = "<group>"; };
+		CEC69B2517240440005AD154 /* yaadti-maithemkadhem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "yaadti-maithemkadhem.mp3"; sourceTree = "<group>"; };
+		CEC69B2617240440005AD154 /* yamfzi-hussaingarib.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "yamfzi-hussaingarib.mp3"; sourceTree = "<group>"; };
+		CEC69B2717240440005AD154 /* yastasheer-mazeedi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "yastasheer-mazeedi.mp3"; sourceTree = "<group>"; };
 		CECEBBB11722A55A00961882 /* joshensageer-alisaleem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "joshensageer-alisaleem.mp3"; sourceTree = "<group>"; };
 		CECEBBB21722A55A00961882 /* tawasel-hussainareean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "tawasel-hussainareean.mp3"; sourceTree = "<group>"; };
 		CECEBBB31722A55A00961882 /* thmaly-maithmtammar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "thmaly-maithmtammar.mp3"; sourceTree = "<group>"; };
+		CECEBBB81723C3F000961882 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
+		CECEBBB91723C3F000961882 /* greenButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenButton@2x.png"; sourceTree = "<group>"; };
+		CECEBBBA1723C3F000961882 /* greenButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButtonHighlight.png; sourceTree = "<group>"; };
+		CECEBBBB1723C3F000961882 /* greenButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		CECEBBBC1723C3F000961882 /* orangeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeButton.png; sourceTree = "<group>"; };
+		CECEBBBD1723C3F000961882 /* orangeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeButton@2x.png"; sourceTree = "<group>"; };
+		CECEBBBE1723C3F000961882 /* orangeButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeButtonHighlight.png; sourceTree = "<group>"; };
+		CECEBBBF1723C3F000961882 /* orangeButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		CECEBBC01723C3F000961882 /* tanButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tanButton.png; sourceTree = "<group>"; };
+		CECEBBC11723C3F000961882 /* tanButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tanButton@2x.png"; sourceTree = "<group>"; };
+		CECEBBC21723C3F000961882 /* tanButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tanButtonHighlight.png; sourceTree = "<group>"; };
+		CECEBBC31723C3F000961882 /* tanButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tanButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		CEDCE9211726A59A00491ECB /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		CEDCE9221726A59C00491ECB /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		CEDCE9231726A59C00491ECB /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		CEDF0905171F36EA00EFF0C5 /* AdiaMokhtara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdiaMokhtara.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDF0908171F36EA00EFF0C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEDF090A171F36EA00EFF0C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,6 +167,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CECEBBB71723C3DA00961882 /* bgimg */ = {
+			isa = PBXGroup;
+			children = (
+				CECEBBB81723C3F000961882 /* greenButton.png */,
+				CECEBBB91723C3F000961882 /* greenButton@2x.png */,
+				CECEBBBA1723C3F000961882 /* greenButtonHighlight.png */,
+				CECEBBBB1723C3F000961882 /* greenButtonHighlight@2x.png */,
+				CECEBBBC1723C3F000961882 /* orangeButton.png */,
+				CECEBBBD1723C3F000961882 /* orangeButton@2x.png */,
+				CECEBBBE1723C3F000961882 /* orangeButtonHighlight.png */,
+				CECEBBBF1723C3F000961882 /* orangeButtonHighlight@2x.png */,
+				CECEBBC01723C3F000961882 /* tanButton.png */,
+				CECEBBC11723C3F000961882 /* tanButton@2x.png */,
+				CECEBBC21723C3F000961882 /* tanButtonHighlight.png */,
+				CECEBBC31723C3F000961882 /* tanButtonHighlight@2x.png */,
+			);
+			name = bgimg;
+			sourceTree = "<group>";
+		};
 		CEDF08FC171F36EA00EFF0C5 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +219,7 @@
 		CEDF090E171F36EA00EFF0C5 /* AdiaMokhtara */ = {
 			isa = PBXGroup;
 			children = (
+				CECEBBB71723C3DA00961882 /* bgimg */,
 				CEDF094C1721958200EFF0C5 /* mp3s */,
 				CEDF09431720480500EFF0C5 /* AdiaMokhtaraDB */,
 				CEDF093F172045B400EFF0C5 /* DuaaDB */,
@@ -140,6 +235,9 @@
 				CEDF092C171F36EB00EFF0C5 /* DetailViewController_iPhone.xib */,
 				CEDF092F171F36EB00EFF0C5 /* DetailViewController_iPad.xib */,
 				CEDF090F171F36EB00EFF0C5 /* Supporting Files */,
+				CEDCE9211726A59A00491ECB /* AboutViewController.h */,
+				CEDCE9221726A59C00491ECB /* AboutViewController.m */,
+				CEDCE9231726A59C00491ECB /* AboutViewController.xib */,
 			);
 			path = AdiaMokhtara;
 			sourceTree = "<group>";
@@ -190,10 +288,33 @@
 		CEDF094C1721958200EFF0C5 /* mp3s */ = {
 			isa = PBXGroup;
 			children = (
+				CEC69B161724043F005AD154 /* ahad-tamar.mp3 */,
+				CEC69B171724043F005AD154 /* arba-tamar.mp3 */,
+				CEC69B1817240440005AD154 /* hazeen-mazeedi.mp3 */,
+				CEC69B1917240440005AD154 /* hojb-mazeedi.mp3 */,
+				CEC69B1A17240440005AD154 /* ifttah-basem.mp3 */,
+				CEC69B1B17240440005AD154 /* ithnin-tamar.mp3 */,
+				CEC69B1C17240440005AD154 /* joma-tamar.mp3 */,
+				CEC69B1D17240440005AD154 /* kesa-mazeedi.mp3 */,
+				CEC69B1E17240440005AD154 /* khamees-tamar.mp3 */,
+				CEC69B1F17240440005AD154 /* komeel-hussaingarib.mp3 */,
+				CEC69B2017240440005AD154 /* mkarm-mazeedi.mp3 */,
+				CEC69B2117240440005AD154 /* mojeer-hussaingareeb.mp3 */,
+				CEC69B2217240440005AD154 /* ndba-hussainareean.mp3 */,
+				CEC69B2317240440005AD154 /* sabt-tamar.mp3 */,
+				CEC69B2417240440005AD154 /* thalatha-tamar.mp3 */,
+				CEC69B2517240440005AD154 /* yaadti-maithemkadhem.mp3 */,
+				CEC69B2617240440005AD154 /* yamfzi-hussaingarib.mp3 */,
+				CEC69B2717240440005AD154 /* yastasheer-mazeedi.mp3 */,
+				CEC69B141724040A005AD154 /* mashlool-mazeedi.mp3 */,
+				CEC69B121723D023005AD154 /* ahd-frhmnd.mp3 */,
+				CEC69B0E1723D012005AD154 /* adeela-mazeedi.mp3 */,
+				CEC69B0F1723D012005AD154 /* somat-hussaingarib.mp3 */,
+				CEC69B0C1723CB0B005AD154 /* joshenkabeer-hussaingarib.mp3 */,
+				CEC69B0A1723CA72005AD154 /* amn-mzeedi.mp3 */,
 				CECEBBB11722A55A00961882 /* joshensageer-alisaleem.mp3 */,
 				CECEBBB21722A55A00961882 /* tawasel-hussainareean.mp3 */,
 				CECEBBB31722A55A00961882 /* thmaly-maithmtammar.mp3 */,
-				CECEBBAF17229EF400961882 /* amn-mzeedi.mp3 */,
 				CEDF094D1721983700EFF0C5 /* sabah-frhmnd.mp3 */,
 			);
 			name = mp3s;
@@ -260,10 +381,46 @@
 				CEDF0931171F36EB00EFF0C5 /* DetailViewController_iPad.xib in Resources */,
 				CEDF093A17203E8C00EFF0C5 /* duaa.db in Resources */,
 				CEDF094E1721983700EFF0C5 /* sabah-frhmnd.mp3 in Resources */,
-				CECEBBB017229EF400961882 /* amn-mzeedi.mp3 in Resources */,
 				CECEBBB41722A55A00961882 /* joshensageer-alisaleem.mp3 in Resources */,
 				CECEBBB51722A55A00961882 /* tawasel-hussainareean.mp3 in Resources */,
 				CECEBBB61722A55A00961882 /* thmaly-maithmtammar.mp3 in Resources */,
+				CECEBBC41723C3F000961882 /* greenButton.png in Resources */,
+				CECEBBC51723C3F000961882 /* greenButton@2x.png in Resources */,
+				CECEBBC61723C3F000961882 /* greenButtonHighlight.png in Resources */,
+				CECEBBC71723C3F000961882 /* greenButtonHighlight@2x.png in Resources */,
+				CECEBBC81723C3F000961882 /* orangeButton.png in Resources */,
+				CECEBBC91723C3F000961882 /* orangeButton@2x.png in Resources */,
+				CECEBBCA1723C3F000961882 /* orangeButtonHighlight.png in Resources */,
+				CECEBBCB1723C3F000961882 /* orangeButtonHighlight@2x.png in Resources */,
+				CECEBBCC1723C3F000961882 /* tanButton.png in Resources */,
+				CECEBBCD1723C3F000961882 /* tanButton@2x.png in Resources */,
+				CECEBBCE1723C3F000961882 /* tanButtonHighlight.png in Resources */,
+				CECEBBCF1723C3F000961882 /* tanButtonHighlight@2x.png in Resources */,
+				CEC69B0B1723CA72005AD154 /* amn-mzeedi.mp3 in Resources */,
+				CEC69B0D1723CB0B005AD154 /* joshenkabeer-hussaingarib.mp3 in Resources */,
+				CEC69B101723D012005AD154 /* adeela-mazeedi.mp3 in Resources */,
+				CEC69B111723D012005AD154 /* somat-hussaingarib.mp3 in Resources */,
+				CEC69B131723D023005AD154 /* ahd-frhmnd.mp3 in Resources */,
+				CEC69B151724040A005AD154 /* mashlool-mazeedi.mp3 in Resources */,
+				CEC69B2817240440005AD154 /* ahad-tamar.mp3 in Resources */,
+				CEC69B2917240440005AD154 /* arba-tamar.mp3 in Resources */,
+				CEC69B2A17240440005AD154 /* hazeen-mazeedi.mp3 in Resources */,
+				CEC69B2B17240440005AD154 /* hojb-mazeedi.mp3 in Resources */,
+				CEC69B2C17240440005AD154 /* ifttah-basem.mp3 in Resources */,
+				CEC69B2D17240440005AD154 /* ithnin-tamar.mp3 in Resources */,
+				CEC69B2E17240440005AD154 /* joma-tamar.mp3 in Resources */,
+				CEC69B2F17240440005AD154 /* kesa-mazeedi.mp3 in Resources */,
+				CEC69B3017240440005AD154 /* khamees-tamar.mp3 in Resources */,
+				CEC69B3117240440005AD154 /* komeel-hussaingarib.mp3 in Resources */,
+				CEC69B3217240440005AD154 /* mkarm-mazeedi.mp3 in Resources */,
+				CEC69B3317240440005AD154 /* mojeer-hussaingareeb.mp3 in Resources */,
+				CEC69B3417240440005AD154 /* ndba-hussainareean.mp3 in Resources */,
+				CEC69B3517240440005AD154 /* sabt-tamar.mp3 in Resources */,
+				CEC69B3617240440005AD154 /* thalatha-tamar.mp3 in Resources */,
+				CEC69B3717240440005AD154 /* yaadti-maithemkadhem.mp3 in Resources */,
+				CEC69B3817240440005AD154 /* yamfzi-hussaingarib.mp3 in Resources */,
+				CEC69B3917240440005AD154 /* yastasheer-mazeedi.mp3 in Resources */,
+				CEDCE9251726A59D00491ECB /* AboutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +439,7 @@
 				CEDF0942172045D400EFF0C5 /* DuaaDB.m in Sources */,
 				CEDF09461720482100EFF0C5 /* AMDB.m in Sources */,
 				CEDF09491721718400EFF0C5 /* Duaa.m in Sources */,
+				CEDCE9241726A59D00491ECB /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +501,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Noor Alwilaya (5TXXLJG7PG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -356,8 +515,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -375,14 +535,16 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Noor Alwilaya (5TXXLJG7PG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -395,7 +557,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AdiaMokhtara/AdiaMokhtara-Prefix.pch";
 				INFOPLIST_FILE = "AdiaMokhtara/AdiaMokhtara-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -406,7 +570,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AdiaMokhtara/AdiaMokhtara-Prefix.pch";
 				INFOPLIST_FILE = "AdiaMokhtara/AdiaMokhtara-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

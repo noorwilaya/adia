@@ -286,7 +286,7 @@
         return @0;
     }
 }
-
+/*
 - (void) updateRow:(NSDictionary *) record:(NSNumber *) rowID {
     // NSLog(@"%s", __FUNCTION__);
     int dictSize = [record count];
@@ -307,7 +307,7 @@
     sqlite3_step(statement);
     sqlite3_finalize(statement);
 }
-
+*/
 - (void) deleteRow:(NSNumber *) rowID {
     // NSLog(@"%s", __FUNCTION__);
     
@@ -332,7 +332,7 @@
 }
 
 - (void) setObject:(NSDictionary *) record forKeyedSubscript: (NSNumber *) rowID {
-	[self updateRow:record :rowID];
+	//[self updateRow:record :rowID];
 }
 
 #pragma mark - Utility Methods

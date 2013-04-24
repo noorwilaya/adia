@@ -50,7 +50,7 @@ static NSString * const kDuaaDBVersion = @"1.1.3";
 
 // CRUD methods
 - (NSNumber *) insertRow:(NSDictionary *) record;
-- (void) updateRow:(NSDictionary *) record: (NSNumber *) rowID;
+//- (void) updateRow:(NSDictionary *) record: (NSNumber *) rowID;
 - (void) deleteRow:(NSNumber *) rowID;
 - (NSDictionary *) getRow: (NSNumber *) rowID;
 - (NSNumber *) countRows;

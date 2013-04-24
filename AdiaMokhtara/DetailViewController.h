@@ -14,12 +14,18 @@
 @property (strong, nonatomic) id detailItem;
 @property (strong,nonatomic) Duaa* currentDuaa;
 @property (strong,nonatomic) AVAudioPlayer *audioPlayer;
+@property (strong,nonatomic) NSString* previousDuaa;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
-@property (weak, nonatomic) IBOutlet UITextView *duaaTextDisplay;
+@property ( nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property ( nonatomic) IBOutlet UITextView *duaaTextDisplay;
 - (IBAction)btn_pauseIphone:(id)sender;
 
 - (IBAction)btn_stopIphone:(id)sender;
 -(void) refreshView;
 - (IBAction)btn_playIphone:(id)sender;
+@property (unsafe_unretained, nonatomic) IBOutlet UITextView *duaaTextDisplay_iPad;
+- (IBAction)btn_playIpad:(id)sender;
+- (IBAction)btn_pauseIpad:(id)sender;
+- (IBAction)btn_stopIpad:(id)sender;
+
 @end

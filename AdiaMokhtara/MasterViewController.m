@@ -10,7 +10,9 @@
 
 #import "DetailViewController.h"
 #import "AMDB.h"
+#import "AboutViewController.h"
 #import "Duaa.h"
+
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -23,6 +25,7 @@ NSMutableArray* duaaList;
 NSMutableArray* filteredDuaaList;
 AMDB *db;
 BOOL isFiltered;
+Duaa* duaaOfTheDay;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,14 +46,18 @@ BOOL isFiltered;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	NSLog(@"View loaded");
-    NSLog(@"initialixing db");
     
+    NSLog(@"View loaded");
+    
+    //Set the color of the navigation bar
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:59/255.0f green:89/255.0f blue:65/255.0f alpha:1];
+	
+    NSLog(@"initialixing db");
     NSString * dbfn = @"duaa.db";
     db = [[AMDB alloc] initWithAMDBFilename:dbfn];
     NSLog(@"Getting the list of duaas ");
     duaaList= [db getDuaaList];
-    
+    duaaOfTheDay=[db getDuaaOfTheDay];
 }
 
 
@@ -59,29 +66,88 @@ BOOL isFiltered;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"user selected an item");
-    Duaa *object = duaaList[indexPath.row];
+    Duaa *object;
+    if(indexPath.section==0)
+    {
+        object= duaaList[indexPath.row];
+    }
+    else
+    {
+        object=duaaOfTheDay;
+    }
+     
     
     NSLog(@"Checking the user device");
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
         NSLog(@"The user device is iphone");
-	    if (!self.detailViewController)
+        if(indexPath.section==0 || indexPath.section==1)
         {
-            NSLog(@"Initializing the detail view contoller for the first time");
-	        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
-	    }
-        NSLog(@"Passing the selected duaa to the detail controller");
-	    self.detailViewController.currentDuaa = object;
+            if (!self.detailViewController)
+            {
+                NSLog(@"Initializing the detail view contoller for the first time");
+                self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
+            }
+            NSLog(@"Passing the selected duaa to the detail controller");
+            
+            self.detailViewController.currentDuaa = object;
+            
+            NSLog(@"Pushing the detail contoller to the nnavigation controller");
+            [self.navigationController pushViewController:self.detailViewController animated:YES];
+            NSLog(@"refreshing the detail view");
+            [self.detailViewController refreshView];
+        }
+        else
+        {
+            if (!self.aboutViewContoller)
+            {
+                NSLog(@"Initializing the about view contoller for the first time");
+                self.aboutViewContoller = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
+            }
+    
+            NSLog(@"Pushing the about contoller to the nnavigation controller");
+            [self.navigationController pushViewController:self.aboutViewContoller animated:YES];
+
+        }
         
-        NSLog(@"Pushing the detail contoller to the nnavigation controller");
-        [self.navigationController pushViewController:self.detailViewController animated:YES];
-        NSLog(@"refreshing the detail view");
-        [self.detailViewController refreshView];
-        
-        
-    } else {
-        self.detailViewController.detailItem = object;
     }
+    else
+    {
+        NSLog(@"The user device is ipad");
+        NSLog(@"Pass the current duaa to the detailViewController");
+        self.detailViewController.currentDuaa = object;
+        [self.detailViewController refreshView];
+    }
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UIView *customTitleView = [ [UIView alloc] initWithFrame:CGRectMake(10, 0, 300, 44)];
+    
+    UILabel *titleLabel = [ [UILabel alloc] initWithFrame:CGRectMake(20, 8, 300, 44)];
+    
+    if(section==0)
+    {
+        titleLabel.text = @"أدعية مختارة";
+    }
+    else if(section==1)
+    {
+        titleLabel.text = @"دعاء اليوم";
+    }
+    else
+    {
+        titleLabel.text = @"حول";
+    }
+    
+    
+    titleLabel.textColor = [UIColor whiteColor];
+    
+    titleLabel.backgroundColor = [UIColor clearColor];
+    
+    [customTitleView addSubview:titleLabel];
+    
+    return customTitleView;
+    
 }
 
 //Table datasource
@@ -99,42 +165,78 @@ BOOL isFiltered;
     }
     
     //Customizing the cell text and subtext
-    Duaa *object;
-    if(isFiltered)
+    
+    if(indexPath.section==0)
     {
-        object = filteredDuaaList[indexPath.row];
+        Duaa *object;
+        if(isFiltered)
+        {
+            object = filteredDuaaList[indexPath.row];
+        }
+        else
+        {
+            object= duaaList[indexPath.row];
+        }
+        
+        cell.detailTextLabel.text=[object duaaReciter];
+        cell.textLabel.text = [object duaaName];
+    }
+    else if (indexPath.section==1)
+    {
+        cell.textLabel.text=duaaOfTheDay.duaaName;
     }
     else
     {
-        object= duaaList[indexPath.row];
+        cell.textLabel.text=@"حول";
     }
-     
-    cell.detailTextLabel.text=[object duaaReciter];
-    cell.textLabel.text = [object duaaName];
+
     return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(isFiltered)
+    if(section==0)
     {
-        return filteredDuaaList.count;
+        if(isFiltered)
+        {
+            return filteredDuaaList.count;
+        }
+        else
+        {
+            return duaaList.count;
+        }
     }
     else
     {
-       return duaaList.count; 
+        return 1;
     }
     
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if(section==0)
+    {
+        return @"أدعية مختارة";
+    }
+    else if(section==1)
+    {
+        return @"دعاء اليوم";
+    }
+    else
+    {
+        return @"حول";
+    }
+}
+
 //search methods
 //search input delegate
-
+/*
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
 {
     if(text.length>3)
@@ -176,7 +278,7 @@ BOOL isFiltered;
     
     [self.tableView reloadData];
 }
-
+*/
 //extra methods
 - (void)didReceiveMemoryWarning
 {
@@ -184,7 +286,19 @@ BOOL isFiltered;
     // Dispose of any resources that can be recreated.
 }
 
-
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    NSLog(@"here");
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        NSLog(@"dvice is iphone");
+        return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    } else {
+        NSLog(@"device is ipad");
+        NSLog(@"returning yes always");
+        return YES;
+    }
+    
+}
 
 
 

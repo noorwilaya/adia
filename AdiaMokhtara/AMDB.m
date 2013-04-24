@@ -85,7 +85,7 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
     self->tableName = kFeedTableName;
     NSNumber * rowid = [self valueFromQuery:@"SELECT id FROM feed WHERE url = ?", feed[kDBFeedUrlKey]];
     if (rowid) {
-        [self updateRow:feed :rowid];
+        //[self updateRow:feed :rowid];
         return rowid;
     } else {
         [self insertRow:feed];
@@ -96,9 +96,9 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
 - (void) updateFeed: (NSDictionary *) feed forRowID: (NSNumber *) rowid {
     // NSLog(@"%s", __FUNCTION__);
     self->tableName = kFeedTableName;
-    NSDictionary * rec = @{@"title": feed[@"title"],
-                           @"desc": feed[@"desc"]};
-    [self updateRow:rec :rowid];
+   // NSDictionary * rec = @{@"title": feed[@"title"],
+     //                      @"desc": feed[@"desc"]};
+   // [self updateRow:rec :rowid];
 }
 
 #pragma mark - Item methods
@@ -138,7 +138,7 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
     NSNumber * rowid = [self valueFromQuery:@"SELECT id FROM item WHERE url = ? AND feed_id = ?",
                         item[kDBItemUrlKey], item[kDBItemFeedIDKey]];
     if (rowid) {
-        [self updateRow:item :rowid];
+      //  [self updateRow:item :rowid];
         return rowid;
     } else {
         [self insertRow:item];
@@ -168,7 +168,7 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
     Duaa *duaa;
     NSDictionary * row;
     NSNumber *duaaId;
-    for (row in [self getQuery:@"SELECT * FROM duaa"])
+    for (row in [self getQuery:@"SELECT * FROM duaa order by cast(\"order\" as decimal)"])
     {
         duaa=[[Duaa alloc] init];
         duaaId=row[@"id"];
@@ -181,12 +181,12 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
         NSLog(@"duaa name %@",duaa.duaaName);
         [duaalist addObject:duaa];
     }
-
+    
+   
     NSLog(@"finished getting duaa list");
     NSLog(@"duaa list size is :%i",duaalist.count);
     
-    
-    
+        
     return duaalist;
     
 }
@@ -221,5 +221,80 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
     
     return duaalist;
 }
+
+-(Duaa*) getDuaaOfTheDay
+{
+    
+    Duaa *duaa;
+    NSDictionary * row;
+    NSNumber *duaaId;
+    
+    NSLog(@"Adding duaa of the day");
+    NSLog(@"Get the current day of the week");
+    NSDate *today = [NSDate date];
+    NSDateFormatter *myFormatter = [[NSDateFormatter alloc] init];
+    [myFormatter setDateFormat:@"EEEE"]; // day, like "Saturday"
+    [myFormatter setDateFormat:@"c"]; // day number, like 7 for saturday
+    
+    NSString *dayOfWeek = [myFormatter stringFromDate:today];
+    NSLog(@"day of week %@",dayOfWeek);
+    int dayOfWeekNumber=[dayOfWeek intValue];
+    NSLog(@"day of week number %i",dayOfWeekNumber);
+    NSString* query;
+    
+    switch (dayOfWeekNumber)
+    {
+        //sunday
+        case 1:
+            query=@"select * from duaa where id=17";
+            break;
+            //monday
+        case 2:
+            query=@"select * from duaa where id=18";
+            break;
+            //tuesday
+        case 3:
+            query=@"select * from duaa where id=19";
+            break;
+            //wensday
+        case 4:
+            query=@"select * from duaa where id=20";
+            break;
+            //thursday
+        case 5:
+            query=@"select * from duaa where id=21";
+            break;
+            //friday
+        case 6:
+            query=@"select * from duaa where id=22";
+            break;
+            //saturday
+            
+        case 7:
+            query=@"select * from duaa where id=28";
+            break;
+        default:
+            query=@"select * from duaa where id=28";
+            break;
+    }
+    
+    for (row in [self getQuery:query])
+    {
+        duaa=[[Duaa alloc] init];
+        duaaId=row[@"id"];
+        duaa.duaaId=[duaaId intValue];
+        duaa.duaaName=row[@"duaaname"];
+        duaa.duaaReciter=row[@"reciter"];
+        duaa.duaaText=row[@"text"];
+        duaa.duaaSearchText=row[@"searchtext"];
+        duaa.duaaFile=row[@"file"];
+        NSLog(@"duaa name %@",duaa.duaaName);
+        
+    }
+
+    NSLog(@"finished getting duaa of the week");
+    return duaa;
+}
+
 
 @end

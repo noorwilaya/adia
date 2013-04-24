@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DuaaDB.h"
+#import "Duaa.h"
 static NSString * const kAMDBVersion = @"2.0.0a";
 static NSUInteger const kDefaultMaxItemsPerFeed = 50;
 
@@ -42,7 +43,7 @@ static NSUInteger const kDefaultMaxItemsPerFeed = 50;
 - (NSArray *) getDuaaIDs;
 -(NSMutableArray *) getDuaaList;
 -(NSMutableArray *) searchDuaa:(NSString*) searchText;
-
+-(Duaa*) getDuaaOfTheDay;
 
 
 @end
