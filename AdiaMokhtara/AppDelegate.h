@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MasterViewController.h"
+
+#import "DetailViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -14,6 +17,9 @@
 
 @property (strong, nonatomic) UINavigationController *navigationController;
 
+
+
 @property (strong, nonatomic) UISplitViewController *splitViewController;
+
 
 @end

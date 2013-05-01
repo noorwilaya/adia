@@ -13,22 +13,22 @@
 #import "DetailViewController.h"
 
 @implementation AppDelegate
-
+MasterViewController *masterViewController;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSLog(@"App delegate started");
+    //NSLog(@"App delegate started");
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    NSLog(@"Initilizing xib based on the device");
+    //NSLog(@"Initilizing xib based on the device");
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
-        NSLog(@"The device is iphone");
-        NSLog(@"Initializing master view contoller");
+        //NSLog(@"The device is iphone");
+        //NSLog(@"Initializing master view contoller");
         MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController_iPhone" bundle:nil];
-        NSLog(@"Initilizing navigation contoller");
+        //NSLog(@"Initilizing navigation contoller");
         self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-        NSLog(@"Adding the controller to the window object");
+        //NSLog(@"Adding the controller to the window object");
         self.window.rootViewController = self.navigationController;
     }
     else
@@ -44,8 +44,7 @@
         self.splitViewController = [[UISplitViewController alloc] init];
         self.splitViewController.delegate = detailViewController;
         self.splitViewController.viewControllers = @[masterNavigationController, detailNavigationController];
-        
-        self.window.rootViewController = self.splitViewController;
+        self.window.rootViewController=self.splitViewController;
     }
     [self.window makeKeyAndVisible];
     return YES;
@@ -76,6 +75,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+     [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    
 }
 
 @end

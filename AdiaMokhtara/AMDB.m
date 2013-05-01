@@ -53,7 +53,7 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
 // add index for old version of the DB
 - (void) addNewIndex {
     // NSLog(@"%s", __FUNCTION__);
-    [self doQuery:@"CREATE UNIQUE INDEX IF NOT EXISTS feedUrl ON feed(url)"];
+   // [self doQuery:@"CREATE UNIQUE INDEX IF NOT EXISTS feedUrl ON feed(url)"];
 }
 
 #pragma mark - Feed methods
@@ -178,13 +178,13 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
         duaa.duaaText=row[@"text"];
         duaa.duaaSearchText=row[@"searchtext"];
         duaa.duaaFile=row[@"file"];
-        NSLog(@"duaa name %@",duaa.duaaName);
+        //NSLog(@"duaa name %@",duaa.duaaName);
         [duaalist addObject:duaa];
     }
     
    
-    NSLog(@"finished getting duaa list");
-    NSLog(@"duaa list size is :%i",duaalist.count);
+    //NSLog(@"finished getting duaa list");
+    //NSLog(@"duaa list size is :%i",duaalist.count);
     
         
     return duaalist;
@@ -193,13 +193,13 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
 
 -(NSMutableArray *) searchDuaa:(NSString*) searchText
 {
-    NSLog(@"The user is searching in the duaa list");
+    //NSLog(@"The user is searching in the duaa list");
     NSMutableArray *duaalist=[[NSMutableArray alloc] init];
     Duaa *duaa;
     NSDictionary * row;
     NSNumber *duaaId;
     NSString* query=[[NSString alloc]initWithFormat:@"SELECT * FROM duaa where searchtext like '%%%@%%'",searchText];
-    NSLog(@"the query is %@",query);
+    //NSLog(@"the query is %@",query);
     for (row in [self getQuery:query])
     {
         duaa=[[Duaa alloc] init];
@@ -210,12 +210,12 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
         duaa.duaaText=row[@"text"];
         duaa.duaaSearchText=row[@"searchtext"];
         duaa.duaaFile=row[@"file"];
-        NSLog(@"duaa name %@",duaa.duaaName);
+        //NSLog(@"duaa name %@",duaa.duaaName);
         [duaalist addObject:duaa];
     }
     
-    NSLog(@"finished getting duaa list");
-    NSLog(@"duaa list size is :%i",duaalist.count);
+    //NSLog(@"finished getting duaa list");
+    //NSLog(@"duaa list size is :%i",duaalist.count);
     
     
     
@@ -229,17 +229,17 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
     NSDictionary * row;
     NSNumber *duaaId;
     
-    NSLog(@"Adding duaa of the day");
-    NSLog(@"Get the current day of the week");
+    //NSLog(@"Adding duaa of the day");
+    //NSLog(@"Get the current day of the week");
     NSDate *today = [NSDate date];
     NSDateFormatter *myFormatter = [[NSDateFormatter alloc] init];
     [myFormatter setDateFormat:@"EEEE"]; // day, like "Saturday"
     [myFormatter setDateFormat:@"c"]; // day number, like 7 for saturday
     
     NSString *dayOfWeek = [myFormatter stringFromDate:today];
-    NSLog(@"day of week %@",dayOfWeek);
+    //NSLog(@"day of week %@",dayOfWeek);
     int dayOfWeekNumber=[dayOfWeek intValue];
-    NSLog(@"day of week number %i",dayOfWeekNumber);
+    //NSLog(@"day of week number %i",dayOfWeekNumber);
     NSString* query;
     
     switch (dayOfWeekNumber)
@@ -288,11 +288,11 @@ static NSString * const kDBItemFeedIDKey = @"feed_id";
         duaa.duaaText=row[@"text"];
         duaa.duaaSearchText=row[@"searchtext"];
         duaa.duaaFile=row[@"file"];
-        NSLog(@"duaa name %@",duaa.duaaName);
+        //NSLog(@"duaa name %@",duaa.duaaName);
         
     }
 
-    NSLog(@"finished getting duaa of the week");
+    //NSLog(@"finished getting duaa of the week");
     return duaa;
 }
 

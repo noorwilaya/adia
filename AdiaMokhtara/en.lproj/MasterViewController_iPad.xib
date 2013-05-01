@@ -71,7 +71,10 @@
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 				<bool key="IBUIAlwaysBounceVertical">YES</bool>
 				<int key="IBUIStyle">1</int>
-				<int key="IBUISeparatorStyle">2</int>
+				<object class="NSColor" key="IBUISeparatorColor">
+					<int key="NSColorSpace">2</int>
+					<bytes key="NSRGB">MC43MDU4ODIzNzA1IDAuODIzNTI5NDgxOSAwLjQ4NjI3NDU0MDQAA</bytes>
+				</object>
 				<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
 				<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
 				<float key="IBUIRowHeight">44</float>

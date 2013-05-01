@@ -27,5 +27,9 @@
 - (IBAction)btn_playIpad:(id)sender;
 - (IBAction)btn_pauseIpad:(id)sender;
 - (IBAction)btn_stopIpad:(id)sender;
+-(void) playFile;
+-(void) pauseFile;
+
+@property BOOL isPaused;
 
 @end

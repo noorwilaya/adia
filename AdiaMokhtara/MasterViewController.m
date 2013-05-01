@@ -32,7 +32,7 @@ Duaa* duaaOfTheDay;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        NSLog(@"Setting the title of the master view controller");
+        //NSLog(@"Setting the title of the master view controller");
         self.title = @"أدعية مختارة";
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
         {
@@ -46,18 +46,25 @@ Duaa* duaaOfTheDay;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSLog(@"View loaded");
+    self.tableView.backgroundView=nil;
+    self.tableView.backgroundView=[[UIView alloc]init];
+    self.tableView.backgroundColor=[UIColor colorWithRed:180/255.0f green:210/255.0f blue:124/255.0f alpha:1];
+   // NSLog(@"View loaded");
     
     //Set the color of the navigation bar
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:59/255.0f green:89/255.0f blue:65/255.0f alpha:1];
-	
-    NSLog(@"initialixing db");
+    
+    //NSLog(@"initialixing db");
     NSString * dbfn = @"duaa.db";
     db = [[AMDB alloc] initWithAMDBFilename:dbfn];
-    NSLog(@"Getting the list of duaas ");
+    //NSLog(@"Getting the list of duaas ");
     duaaList= [db getDuaaList];
     duaaOfTheDay=[db getDuaaOfTheDay];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+    {
+        self.detailViewController.currentDuaa=duaaOfTheDay;
+        //[self.detailViewController refreshView];
+    }
 }
 
 
@@ -65,7 +72,7 @@ Duaa* duaaOfTheDay;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"user selected an item");
+    //NSLog(@"user selected an item");
     Duaa *object;
     if(indexPath.section==0)
     {
@@ -77,35 +84,35 @@ Duaa* duaaOfTheDay;
     }
      
     
-    NSLog(@"Checking the user device");
+    //NSLog(@"Checking the user device");
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
-        NSLog(@"The user device is iphone");
+        //NSLog(@"The user device is iphone");
         if(indexPath.section==0 || indexPath.section==1)
         {
             if (!self.detailViewController)
             {
-                NSLog(@"Initializing the detail view contoller for the first time");
+                //NSLog(@"Initializing the detail view contoller for the first time");
                 self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
             }
-            NSLog(@"Passing the selected duaa to the detail controller");
+           // NSLog(@"Passing the selected duaa to the detail controller");
             
             self.detailViewController.currentDuaa = object;
             
-            NSLog(@"Pushing the detail contoller to the nnavigation controller");
+            //NSLog(@"Pushing the detail contoller to the nnavigation controller");
             [self.navigationController pushViewController:self.detailViewController animated:YES];
-            NSLog(@"refreshing the detail view");
+            //NSLog(@"refreshing the detail view");
             [self.detailViewController refreshView];
         }
         else
         {
             if (!self.aboutViewContoller)
             {
-                NSLog(@"Initializing the about view contoller for the first time");
+               // NSLog(@"Initializing the about view contoller for the first time");
                 self.aboutViewContoller = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
             }
     
-            NSLog(@"Pushing the about contoller to the nnavigation controller");
+            //NSLog(@"Pushing the about contoller to the nnavigation controller");
             [self.navigationController pushViewController:self.aboutViewContoller animated:YES];
 
         }
@@ -113,13 +120,28 @@ Duaa* duaaOfTheDay;
     }
     else
     {
-        NSLog(@"The user device is ipad");
-        NSLog(@"Pass the current duaa to the detailViewController");
-        self.detailViewController.currentDuaa = object;
-        [self.detailViewController refreshView];
+       // NSLog(@"The user device is ipad");
+        //NSLog(@"Pass the current duaa to the detailViewController");
+        if(indexPath.section<2)
+        {
+            self.detailViewController.currentDuaa = object;
+            [self.detailViewController refreshView];
+        }
+        else
+        {
+            if (!self.aboutViewContoller)
+            {
+                //NSLog(@"Initializing the about view contoller for the first time");
+                self.aboutViewContoller = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
+            }
+            
+            //NSLog(@"Pushing the about contoller to the nnavigation controller");
+            [self.navigationController pushViewController:self.aboutViewContoller animated:YES];
+        }
+        
     }
 }
-
+/*
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     UIView *customTitleView = [ [UIView alloc] initWithFrame:CGRectMake(10, 0, 300, 44)];
@@ -148,7 +170,7 @@ Duaa* duaaOfTheDay;
     
     return customTitleView;
     
-}
+}*/
 
 //Table datasource
 // Customize the appearance of table view cells.
@@ -188,6 +210,7 @@ Duaa* duaaOfTheDay;
     else
     {
         cell.textLabel.text=@"حول";
+        cell.detailTextLabel.text=@"";
     }
 
     return cell;
@@ -233,6 +256,61 @@ Duaa* duaaOfTheDay;
         return @"حول";
     }
 }
+
+//Handling remote multimedia controls
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    // Turn off remote control event delivery
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    // Resign as first responder
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+    
+}
+
+- (void) remoteControlReceivedWithEvent: (UIEvent *) receivedEvent {
+    
+    if (receivedEvent.type == UIEventTypeRemoteControl) {
+        
+        switch (receivedEvent.subtype) {
+                
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+                if(self.detailViewController.isPaused)
+                {
+                    [self.detailViewController playFile];
+                }
+                else
+                {
+                    [self.detailViewController pauseFile];
+                }
+                break;
+                
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                //[self previousTrack: nil];
+                break;
+                
+            case UIEventSubtypeRemoteControlNextTrack:
+                //[self nextTrack: nil];
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+
 
 //search methods
 //search input delegate
@@ -288,13 +366,13 @@ Duaa* duaaOfTheDay;
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    NSLog(@"here");
+    //NSLog(@"here");
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        NSLog(@"dvice is iphone");
+        //NSLog(@"dvice is iphone");
         return (interfaceOrientation == UIInterfaceOrientationPortrait);
     } else {
-        NSLog(@"device is ipad");
-        NSLog(@"returning yes always");
+        //NSLog(@"device is ipad");
+        //NSLog(@"returning yes always");
         return YES;
     }
     
